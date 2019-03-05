@@ -4,6 +4,8 @@
 #
 # magic.scan.py.
 # let the internet scan the internet.
+#
+# USAGE: magic.scan.py [TCP-PORT-NUMBER] [Seconds to spread love]
 # 
 # The intended purpose for this code is to scan the internet. 
 # It indeed scans the internet, very poorly and slow.
