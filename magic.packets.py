@@ -1,12 +1,12 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 # based on a tool by Emre Ovunc.
 #
 # magic.scan.py.
 # let the internet scan the internet.
 #
-# USAGE: magic.scan.py [TCP-PORT-NUMBER] [Seconds to spread love]
-# 
+# --> USAGE: magic.scan.py [TCP-PORT-NUMBER] [Seconds to spread love] <--
+#  
 # The intended purpose for this code is to scan the internet. 
 # It indeed scans the internet, very poorly and slow.
 # That is why I like it.
@@ -22,15 +22,12 @@
 # ut2
 # 019
 
-
-from scapy.all import *
 import os
 import sys
 import random
 import getopt
+from scapy.all import *
 
-# remove this idiotic method of warning about requirements, lol.
-#print "** You need scapy and a box capable of spoofing IPv4 packets for this magic to work. **"
 
 def randomIP():
 	ip = ".".join(map(str, (random.randint(0,255)for _ in range(4))))
@@ -42,8 +39,7 @@ def randInt():
 
 def scanpacket(dstPort,counter):
 	total = 0
-	print "The internet is now scanning itself..."
-# print statements work differently with python3 so fml i guess i need to fix all these. 
+	print ("The internet is now scanning itself...")
 
 	for x in range (0,counter):
 		s_port = randInt()
@@ -64,21 +60,21 @@ def scanpacket(dstPort,counter):
 
 		send(IP_Packet/TCP_Packet, verbose=0)
 		total+=1
-        sys.stdout.write("\nWe did it! :3 - Total packets sent: %i\n" % total)
+                sys.stdout.write("\nWe did it! :3 - Total packets sent: %i\n" % total)
 
 
 def info():
 	os.system("clear")
-        print ""
-        print "｡･:*:･ﾟ★,｡･:*:･ﾟ☆  :[ PORT SCAN THE PLANET!! ]: ｡･:*:･ﾟ★,｡･:*:･ﾟ☆"
-        print ""
+        print ("")
+        print ("｡･:*:･ﾟ★,｡･:*:･ﾟ☆  :[ PORT SCAN THE PLANET!! ]: ｡･:*:･ﾟ★,｡･:*:･ﾟ☆")
+        print ("")
         if len(sys.argv) > 1:
             commandline = sys.argv[1]
-            print "W0000P - CAUGHT ARG FROM CMDLINE TO SCAN DIS PORT " + sys.argv[1]
+            print ("W0000P - CAUGHT ARG FROM CMDLINE TO SCAN DIS PORT " + sys.argv[1])
             dstPort = sys.argv[1] 
         else:
                 commandline = ''
-                print "Seems quiet on the command line - usage is magic.py [TCP-PORT] [Seconds]"
+                print ("Seems quiet on the command line - usage is magic.py [TCP-PORT] [Seconds]")
                 dstPort = input ("CTRL+C out of this and rerun. Will fix interactive later.")
 # This actually worked before but i think i fucked it up when i was drunk. will fix interactive later, maybe.
 
@@ -90,7 +86,7 @@ def main():
 	dstPort = info()
 #	counter = input ("Packet Count : ")
         counter = sys.argv[2]
-        print sys.argv[2] +" sparkles around the internet :)"
+        print (sys.argv[2] +" sparkles around the internet :)")
         scanpacket(dstPort,int(counter))
 
 main()
