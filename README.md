@@ -29,9 +29,13 @@ IP 216.46.143.157.1971 > 109.39.106.11.31337: Flags [S], seq 1842, win 3942, opt
 REQUIREMENTS FOR THIS TO WORK PROPERLY:
 
 Python3
+
 Scapy Python3 libraries (python-scapy)
+
 IPHM-Enabled Server(s) AKA Spoof Boxes AKA Servers without BCP38 turned on.
+
 Sense of Humor
+
 
 Having a server that's able to spoof IPv4 addresses is certainly the most important part of this performance piece. You can't participate in this without one, sorry. This is also known as IPHM or IP Header Modification enabled servers. They're not easy to find, but there are plenty of them. Contact me if you need assistance with this. twitter.com/notdan
 
